@@ -102,4 +102,27 @@ export const GlobalStyle = createGlobalStyle`
       opacity: 0;
     }
   }
+
+  .animate-hidden {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: 0.3s ease-in-out;
+  }
+
+  .animate-show {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+
+  @media ${({ theme }) => theme.breakpoints.sm} {
+    .animate-hidden {
+    transition: 0.4s ease-in-out;
+  }
+  }
+
+  @media(prefers-reduced-motion) {
+    .animate-hidden {
+      transition: none;
+    }
+  }
 `;
