@@ -51,7 +51,11 @@ export const DefaultTemplateContactItem = ({
 
 const Wrapper = styled.div`
   display: flex;
-  gap: 40px;
+  gap: 30px;
+
+  @media ${({ theme }) => theme.breakpoints.sm} {
+    gap: 40px;
+  }
 `;
 
 const LeftColumn = styled.div`

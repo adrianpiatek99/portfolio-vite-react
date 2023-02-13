@@ -40,7 +40,6 @@ export const DefaultTemplateContact = () => {
 const ContactSection = styled.section`
   display: flex;
   flex-direction: column;
-  padding: 86px 0px;
 `;
 
 const Content = styled.div`
