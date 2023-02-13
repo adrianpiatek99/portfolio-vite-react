@@ -93,7 +93,7 @@ export const GlobalStyle = createGlobalStyle`
     background-color: currentColor;
     opacity: 0.5;
     animation: ripple 0.35s linear;
-    z-index: -1;
+    z-index: 0;
   }
 
   @keyframes ripple {

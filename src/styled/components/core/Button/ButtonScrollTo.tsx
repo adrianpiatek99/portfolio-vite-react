@@ -47,4 +47,8 @@ export const ButtonScrollTo = forwardRef(
 
 const ButtonElement = styled.button<ButtonElementProps>`
   ${generalButtonStyles};
+
+  & > span {
+    z-index: 1;
+  }
 `;

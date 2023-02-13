@@ -1,10 +1,11 @@
+import { CopyToClipboard } from "react-copy-to-clipboard";
+
 import { Typography } from "components/core";
 import { EMAIL_ADDRESS, GITHUB_URL, LINKEDIN_URL } from "constants/links";
 import GithubIcon from "icons/GithubIcon";
 import LinkedinIcon from "icons/LinkedinIcon";
 import MailIcon from "icons/MailIcon";
 import styled from "styled-components";
-import { copyToClipboard } from "utils/copyToClipboardUtil";
 
 import { DefaultTemplateContactItem } from "./DefaultTemplateContactItem";
 
@@ -18,13 +19,14 @@ export const DefaultTemplateContact = () => {
           </Typography>
         </ContentLeft>
         <ContentRight>
-          <DefaultTemplateContactItem
-            icon={<MailIcon />}
-            title="Email address"
-            text={EMAIL_ADDRESS}
-            onClick={() => copyToClipboard(EMAIL_ADDRESS)}
-            buttonText="Copy to clipboard"
-          />
+          <CopyToClipboard text={EMAIL_ADDRESS}>
+            <DefaultTemplateContactItem
+              icon={<MailIcon />}
+              title="Email address"
+              text={EMAIL_ADDRESS}
+              buttonText="Copy to clipboard"
+            />
+          </CopyToClipboard>
           <DefaultTemplateContactItem
             icon={<LinkedinIcon />}
             title="LinkedIn"
@@ -40,7 +42,6 @@ export const DefaultTemplateContact = () => {
 const ContactSection = styled.section`
   display: flex;
   flex-direction: column;
-  padding: 86px 0px;
 `;
 
 const Content = styled.div`

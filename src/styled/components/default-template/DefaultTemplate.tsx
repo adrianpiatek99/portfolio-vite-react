@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { DefaultTemplateAboutMe } from "./DefaultTemplateAboutMe";
 import { DefaultTemplateBackground } from "./DefaultTemplateBackground";
 import { DefaultTemplateContact } from "./DefaultTemplateContact";
+import { DefaultTemplateProjects } from "./DefaultTemplateProjects";
 
 export const DefaultTemplate = () => {
   return (
@@ -13,6 +14,7 @@ export const DefaultTemplate = () => {
       <InnerWrapper>
         <DefaultTemplateBackground />
         <DefaultTemplateAboutMe />
+        <DefaultTemplateProjects />
         <DefaultTemplateContact />
       </InnerWrapper>
       <Footer />
