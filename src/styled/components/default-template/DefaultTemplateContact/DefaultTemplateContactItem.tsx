@@ -25,10 +25,14 @@ export const DefaultTemplateContactItem = ({
     <Wrapper>
       <LeftColumn>{icon}</LeftColumn>
       <RightColumn>
-        <Typography size="xxl" weight={500}>
+        <Typography size="xxl" mobileSize="xl" weight={500}>
           {title}
         </Typography>
-        {text && <Typography color="secondary">{text}</Typography>}
+        {text && (
+          <Typography size="l" mobileSize="m" color="secondary">
+            {text}
+          </Typography>
+        )}
         {onClick && <Button onClick={onClick}>{buttonText}</Button>}
         {href && (
           <CustomLink

@@ -23,8 +23,8 @@ const LinkElement = styled(Link)`
   align-items: center;
   color: ${({ theme }) => theme.primary};
   font-weight: 600;
-  ${({ theme }) => theme.text.xl};
   transition: opacity 0.2s, filter 0.2s, box-shadow 0.2s;
+  ${({ theme }) => theme.text.l};
 
   & > svg {
     width: 22px;
@@ -44,5 +44,9 @@ const LinkElement = styled(Link)`
 
   &:focus-visible {
     box-shadow: 0px 1px 0px currentColor;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.sm} {
+    ${({ theme }) => theme.text.xl};
   }
 `;
