@@ -24,6 +24,7 @@ export const generalButtonStyles = css<ButtonElementProps>`
   cursor: pointer;
   transition: background-color 0.2s, box-shadow 0.2s;
   ${({ theme }) => theme.text.m};
+  will-change: transform;
 
   @media (hover: hover) {
     &:hover:not(:disabled) {

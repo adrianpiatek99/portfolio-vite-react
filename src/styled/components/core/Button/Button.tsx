@@ -31,7 +31,7 @@ export const Button = forwardRef(
         onClick={handleClick}
         ref={ref}
       >
-        {children}
+        <span>{children}</span>
       </ButtonElement>
     );
   }
@@ -40,4 +40,8 @@ export const Button = forwardRef(
 const ButtonElement = styled.button<ButtonElementProps>`
   ${generalButtonStyles};
   background-color: ${({ theme }) => theme.primary};
+
+  & > span {
+    z-index: 1;
+  }
 `;
