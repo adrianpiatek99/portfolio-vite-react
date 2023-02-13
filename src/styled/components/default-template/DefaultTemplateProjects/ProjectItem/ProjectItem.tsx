@@ -21,7 +21,7 @@ export const ProjectItem = ({
   const { primary } = useTheme();
 
   return (
-    <Wrapper>
+    <Wrapper className="animate-hidden">
       {isPinned && (
         <PinIconWrapper>
           <PinIcon />

@@ -13,7 +13,7 @@ export const DefaultTemplateContact = () => {
   return (
     <ContactSection id="contact">
       <Content>
-        <ContentLeft>
+        <ContentLeft className="animate-hidden">
           <Typography heading tag="h2" weight={600} size="xxl" mobileSize="l">
             Contact
           </Typography>

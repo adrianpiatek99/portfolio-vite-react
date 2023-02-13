@@ -9,7 +9,7 @@ export const DefaultTemplateAboutMe = () => {
   const { primary } = useTheme();
 
   return (
-    <AboutMeSection id="about-me">
+    <AboutMeSection id="about-me" className="animate-hidden">
       <Content>
         <ContentLeft>
           <Typography heading tag="h2" weight={600} size="xxl" mobileSize="l">

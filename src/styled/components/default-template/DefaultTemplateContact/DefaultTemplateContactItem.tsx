@@ -22,7 +22,7 @@ export const DefaultTemplateContactItem = ({
   onClick
 }: DefaultTemplateContactItemProps) => {
   return (
-    <Wrapper>
+    <Wrapper className="animate-hidden">
       <LeftColumn>{icon}</LeftColumn>
       <RightColumn>
         <Typography size="xxl" mobileSize="xl" weight={500}>
