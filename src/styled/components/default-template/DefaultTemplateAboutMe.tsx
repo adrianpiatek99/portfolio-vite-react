@@ -1,4 +1,7 @@
+import { Link } from "react-router-dom";
+
 import { IconButton, Typography } from "components/core";
+import { GITHUB_URL } from "constants/links";
 import GithubIcon from "icons/GithubIcon";
 import styled, { useTheme } from "styled-components";
 
@@ -30,9 +33,11 @@ export const DefaultTemplateAboutMe = () => {
             quidem blanditiis laborum deleniti mollitia!
           </Typography>
           <IconsGroup>
-            <IconButton title="GitHub" size="large">
-              <GithubIcon />
-            </IconButton>
+            <Link to={GITHUB_URL} target="_blank" rel="noopener noreferrer" tabIndex={-1}>
+              <IconButton title="GitHub" size="large">
+                <GithubIcon />
+              </IconButton>
+            </Link>
           </IconsGroup>
         </ContentRight>
       </Content>
