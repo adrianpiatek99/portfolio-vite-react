@@ -1,22 +1,40 @@
 {
-  "name": "portfolio-vite-react",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
-  "devDependencies": {
-    "@types/react": "^18.0.27",
-    "@types/react-dom": "^18.0.10",
-    "@vitejs/plugin-react": "^3.1.0",
-    "typescript": "^4.9.3",
-    "vite": "^4.1.0"
-  }
+	"name": "portfolio-vite-react",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc && vite build",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"@tippyjs/react": "^4.2.6",
+		"framer-motion": "^9.0.2",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"react-focus-lock": "^2.9.3",
+		"react-icons": "^4.7.1",
+		"react-router-dom": "^6.8.1",
+		"styled-components": "^5.3.6",
+		"vite-tsconfig-paths": "^4.0.5"
+	},
+	"devDependencies": {
+		"@types/react": "^18.0.27",
+		"@types/react-dom": "^18.0.10",
+		"@types/styled-components": "^5.1.26",
+		"@typescript-eslint/eslint-plugin": "^5.51.0",
+		"@typescript-eslint/parser": "^5.51.0",
+		"@vitejs/plugin-react": "^3.1.0",
+		"eslint": "^8.34.0",
+		"eslint-config-prettier": "^8.6.0",
+		"eslint-plugin-import": "^2.27.5",
+		"eslint-plugin-prettier": "^4.2.1",
+		"eslint-plugin-react": "^7.32.2",
+		"eslint-plugin-react-hooks": "^4.6.0",
+		"eslint-plugin-simple-import-sort": "^10.0.0",
+		"prettier": "^2.8.4",
+		"typescript": "^4.9.3",
+		"vite": "^4.1.0"
+	}
 }
