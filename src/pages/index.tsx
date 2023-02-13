@@ -1,5 +1,7 @@
+import { DefaultTemplate } from "components/default-template";
+
 const DefaultPage = () => {
-  return <div>Default page</div>;
+  return <DefaultTemplate />;
 };
 
 export default DefaultPage;
