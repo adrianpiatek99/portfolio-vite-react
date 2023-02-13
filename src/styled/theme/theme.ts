@@ -39,7 +39,7 @@ const breakpoints = {
 };
 
 export const theme: DefaultTheme = {
-  background1: "#0a0a0a",
+  background1: "#060606",
   background2: "#0c0c0e",
   color1: "#edebe8",
   color2: "#999999",
