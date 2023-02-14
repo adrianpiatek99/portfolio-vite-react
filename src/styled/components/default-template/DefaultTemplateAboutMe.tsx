@@ -28,9 +28,7 @@ export const DefaultTemplateAboutMe = () => {
             Junior React Developer
           </Typography>
           <Typography tag="p" color="secondary" size="xl" mobileSize="l">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa veritatis cumque natus
-            minima? Hic similique ipsam dicta molestias quibusdam rem vero nisi facere nulla, eaque
-            quidem blanditiis laborum deleniti mollitia!
+            Hello and welcome to my portfolio.
           </Typography>
           <IconsGroup>
             <Link to={GITHUB_URL} target="_blank" rel="noopener noreferrer" tabIndex={-1}>
