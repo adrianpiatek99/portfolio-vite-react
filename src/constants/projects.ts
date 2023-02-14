@@ -68,7 +68,7 @@ export const projects: Project[] = [
     description:
       "As in the title, it is the Twitter clone 😄\n Responsive website with basic features.",
     image: TwitterCloneUrl,
-    url: "/",
+    url: "https://twitter-clone-nextjs-coral.vercel.app",
     githubUrl: "https://github.com/adrianpiatek99/twitter-clone-nextjs",
     techs: [
       nextjsTech,
