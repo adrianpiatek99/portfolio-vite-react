@@ -1,4 +1,5 @@
 import type { IconType } from "react-icons/lib";
+import { SiTailwindcss } from "react-icons/si";
 
 import CurrentPortfolioUrl from "assets/projects/current-portfolio.png?url";
 import MemoryGameUrl from "assets/projects/memory-game.png?url";
@@ -31,7 +32,8 @@ const techTypes = [
   "Storybook",
   "Airtable",
   "AWS",
-  "@craftjs/core"
+  "@craftjs/core",
+  "Tailwind CSS"
 ] as const;
 
 type TechTuple = typeof techTypes;
@@ -61,6 +63,7 @@ const storybookTech: ProjectTech = { tech: "Storybook", icon: StorybookIcon };
 const airtableTech: ProjectTech = { tech: "Airtable", icon: AirtableIcon };
 const awsTech: ProjectTech = { tech: "AWS", icon: AwsIcon };
 const craftjsTech: ProjectTech = { tech: "@craftjs/core", icon: BuildIcon };
+const tailwindCss: ProjectTech = { tech: "Tailwind CSS", icon: SiTailwindcss };
 
 export const projects: Project[] = [
   {
@@ -74,7 +77,6 @@ export const projects: Project[] = [
       nextjsTech,
       typeScriptTech,
       prismaTech,
-      reduxTech,
       testTech,
       styledComponentsTech,
       tanStackQueryTech
@@ -107,7 +109,7 @@ export const projects: Project[] = [
     image: CurrentPortfolioUrl,
     url: "/",
     githubUrl: "https://github.com/adrianpiatek99/portfolio-vite-react",
-    techs: [viteReactTech, typeScriptTech, styledComponentsTech]
+    techs: [viteReactTech, typeScriptTech, tailwindCss]
   },
   {
     title: "Old portfolio",
