@@ -1,7 +1,9 @@
-## Project Overview 
+## Project Overview
+
 Portfolio
 
 ## Tech
-| Tech |
-| --- |
+
+| Tech                                      |
+| ----------------------------------------- |
 | [Vite + React](https://vitejs.dev/guide/) |

@@ -2,7 +2,6 @@ import type { ReactNode } from "react";
 
 import { Button, CustomLink, Typography } from "components/core";
 import ExternalLinkIcon from "icons/ExternalLinkIcon";
-import styled from "styled-components";
 
 interface DefaultTemplateContactItemProps {
   icon: ReactNode;
@@ -22,14 +21,14 @@ export const DefaultTemplateContactItem = ({
   onClick
 }: DefaultTemplateContactItemProps) => {
   return (
-    <Wrapper className="animate-hidden">
-      <LeftColumn>{icon}</LeftColumn>
-      <RightColumn>
-        <Typography size="xxl" mobileSize="xl" weight={500}>
+    <div className="animate-hidden flex gap-[30px] sm:gap-[40px]">
+      <div className="flex [&>svg]:h-[40px] [&>svg]:w-[40px] [&>svg]:text-color2/60">{icon}</div>
+      <div className="flex flex-col gap-[20px]">
+        <Typography className="text-xl sm:text-2xl" weight="medium">
           {title}
         </Typography>
         {text && (
-          <Typography size="l" mobileSize="m" color="secondary">
+          <Typography className="text-m sm:text-l text-color2" color="secondary">
             {text}
           </Typography>
         )}
@@ -44,32 +43,7 @@ export const DefaultTemplateContactItem = ({
             Visit page
           </CustomLink>
         )}
-      </RightColumn>
-    </Wrapper>
+      </div>
+    </div>
   );
 };
-
-const Wrapper = styled.div`
-  display: flex;
-  gap: 30px;
-
-  @media ${({ theme }) => theme.breakpoints.sm} {
-    gap: 40px;
-  }
-`;
-
-const LeftColumn = styled.div`
-  display: flex;
-
-  & > svg {
-    height: 40px;
-    width: 40px;
-    color: ${({ theme }) => theme.color2}80;
-  }
-`;
-
-const RightColumn = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-`;

@@ -5,20 +5,19 @@ import { EMAIL_ADDRESS, GITHUB_URL, LINKEDIN_URL } from "constants/links";
 import GithubIcon from "icons/GithubIcon";
 import LinkedinIcon from "icons/LinkedinIcon";
 import MailIcon from "icons/MailIcon";
-import styled from "styled-components";
 
 import { DefaultTemplateContactItem } from "./DefaultTemplateContactItem";
 
 export const DefaultTemplateContact = () => {
   return (
-    <ContactSection id="contact">
-      <Content>
-        <ContentLeft className="animate-hidden">
-          <Typography heading tag="h2" weight={600} size="xxl" mobileSize="l">
+    <section id="contact" className="flex flex-col">
+      <div className="flex flex-col gap-[40px] w-full my-[84px] mx-auto sm:my-[124px] lg:flex-row">
+        <div className="animate-hidden flex flex-col w-full h-full lg:sticky lg:top-[70px]">
+          <Typography heading tag="h2" weight="semibold" className="text-5xl sm:text-7xl">
             Contact
           </Typography>
-        </ContentLeft>
-        <ContentRight>
+        </div>
+        <div className="flex flex-col w-full gap-[60px] mt-[7px]">
           <CopyToClipboard text={EMAIL_ADDRESS}>
             <DefaultTemplateContactItem
               icon={<MailIcon />}
@@ -33,49 +32,8 @@ export const DefaultTemplateContact = () => {
             href={LINKEDIN_URL}
           />
           <DefaultTemplateContactItem icon={<GithubIcon />} title="GitHub" href={GITHUB_URL} />
-        </ContentRight>
-      </Content>
-    </ContactSection>
+        </div>
+      </div>
+    </section>
   );
 };
-
-const ContactSection = styled.section`
-  display: flex;
-  flex-direction: column;
-`;
-
-const Content = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  width: 100%;
-  margin: 84px auto;
-
-  @media ${({ theme }) => theme.breakpoints.sm} {
-    margin: 124px auto;
-  }
-
-  @media ${({ theme }) => theme.breakpoints.lg} {
-    flex-direction: row;
-  }
-`;
-
-const ContentLeft = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-
-  @media ${({ theme }) => theme.breakpoints.lg} {
-    position: sticky;
-    top: 70px;
-  }
-`;
-
-const ContentRight = styled.ul`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  gap: 60px;
-  margin-top: 7px;
-`;

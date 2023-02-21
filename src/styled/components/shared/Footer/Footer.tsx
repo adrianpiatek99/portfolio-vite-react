@@ -1,30 +1,13 @@
 import { Typography } from "components/core";
-import styled from "styled-components";
 
 export const Footer = () => {
   return (
-    <FooterSection>
-      <InnerWrapper>
-        <Typography size="l">
+    <footer className="flex flex-col py-[64px] px-[24px] bg-background2 border-t border-border1">
+      <div className="flex flex-col max-w-[1240px] w-full mx-auto">
+        <Typography className="text-l">
           Copyright &copy; {new Date().getFullYear()} Adrian Piątek. All Rights Reserved.
         </Typography>
-      </InnerWrapper>
-    </FooterSection>
+      </div>
+    </footer>
   );
 };
-
-const FooterSection = styled.footer`
-  display: flex;
-  flex-direction: column;
-  padding: 64px 24px;
-  background-color: ${({ theme }) => theme.background2};
-  border-top: 1px solid ${({ theme }) => theme.border1};
-`;
-
-const InnerWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  max-width: 1240px;
-  width: 100%;
-  margin: 0 auto;
-`;

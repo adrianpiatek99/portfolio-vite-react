@@ -3,7 +3,6 @@ import { useEffect, useRef, useState } from "react";
 import { ButtonScrollTo, IconButton } from "components/core";
 import MenuIcon from "icons/MenuIcon";
 import { Logo } from "shared/Logo";
-import styled, { css } from "styled-components";
 
 import { HeaderMobileMenu } from "./HeaderMobileMenu";
 
@@ -45,113 +44,36 @@ export const Header = () => {
 
   return (
     <>
-      <Block isPinned={isPinned} />
-      <HeaderElement ref={headerRef} isPinned={isPinned}>
-        <Nav>
-          <LeftColumn>
+      <div
+        className={`h-[50px] duration-200 ${isPinned && "bg-background2/75 backdrop-blur-md "}`}
+      />
+      <header
+        className={`sticky top-[-1px] right-0 left-0 w-full z-50 duration-200 after:content-[''] after:absolute after:left-[50%] after:bottom-0 after:w-full after:translate-x-[-50%] after:h-px after:bg-border1 after:duration-200 ${
+          isPinned ? "bg-background2/75 backdrop-blur-md after:scale-x-100" : "after:scale-x-0"
+        }`}
+        ref={headerRef}
+      >
+        <nav className="flex align-center gap-[16px] flex-wrap max-w-[1240px] w-full mx-auto px-[30px] py-[12px]">
+          <div className="flex grow">
             <Logo />
-          </LeftColumn>
-          <LinksGroup>
+          </div>
+          <div className="hidden sm:flex sm:align-center sm:gap-[4px] sm:mx-auto">
             <ButtonScrollTo elementId="about-me">About me</ButtonScrollTo>
             <ButtonScrollTo elementId="projects">Projects</ButtonScrollTo>
             <ButtonScrollTo elementId="contact">Contact</ButtonScrollTo>
-          </LinksGroup>
-          <MobileMenu>
+          </div>
+          <div className="flex sm:hidden">
             <IconButton title="Menu" onClick={() => setIsMenuOpen((prev) => !prev)}>
               <MenuIcon />
             </IconButton>
-          </MobileMenu>
-        </Nav>
+          </div>
+        </nav>
         <HeaderMobileMenu
           isOpen={isMenuOpen}
           onClose={() => setIsMenuOpen(false)}
           isPinned={isPinned}
         />
-      </HeaderElement>
+      </header>
     </>
   );
 };
-
-const Block = styled.div<{ isPinned: boolean }>`
-  height: 50px;
-  transition: background-color 0.2s, backdrop-filter 0.2s;
-
-  ${({ isPinned }) =>
-    isPinned &&
-    css`
-      background-color: ${({ theme }) => theme.background2}85;
-      backdrop-filter: blur(12px);
-
-      &::after {
-        transform: translateX(-50%) scaleX(1);
-      }
-    `}
-`;
-
-const HeaderElement = styled.header<{ isPinned: boolean }>`
-  position: sticky;
-  top: -1px;
-  right: 0px;
-  left: 0px;
-  width: 100%;
-  z-index: 50;
-  transition: background-color 0.2s, backdrop-filter 0.2s;
-
-  &::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: 0px;
-    width: 100%;
-    transform: translateX(-50%) scaleX(0);
-    height: 1px;
-    background-color: ${({ theme }) => theme.border1};
-    transition: transform 0.2s;
-  }
-
-  ${({ isPinned }) =>
-    isPinned &&
-    css`
-      background-color: ${({ theme }) => theme.background2}85;
-      backdrop-filter: blur(12px);
-
-      &::after {
-        transform: translateX(-50%) scaleX(1);
-      }
-    `}
-`;
-
-const Nav = styled.nav`
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
-  max-width: 1240px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 12px 30px;
-`;
-
-const LeftColumn = styled.div`
-  display: flex;
-  flex-grow: 1;
-`;
-
-const LinksGroup = styled.div`
-  display: none;
-
-  @media ${({ theme }) => theme.breakpoints.sm} {
-    display: flex;
-    align-items: center;
-    margin: 0 auto;
-    gap: 4px;
-  }
-`;
-
-const MobileMenu = styled.div`
-  display: flex;
-
-  @media ${({ theme }) => theme.breakpoints.sm} {
-    display: none;
-  }
-`;

@@ -1,39 +1,5 @@
-import styled from "styled-components";
-
 export const DefaultTemplateBackground = () => {
-  return <Background />;
+  return (
+    <div className="absolute inset-0 max-h-[67vh] bg-gradient-radial bg-[length:30px_30px] bg-[0_0,15px_15px] z-[-1px] after:content-[''] after:absolute after:left-0 after:right-0 after:bottom-0 after:h-[500px] after:bg-linear-gradient before:content-[''] before:absolute before:left-0 before:right-0 before:top-0 before:h-[50px] before:bg-gradient-to-b before:from-[#060606] before:to-[transparent]" />
+  );
 };
-
-const Background = styled.div`
-  position: absolute;
-  inset: 0px;
-  max-height: 67vh;
-  background-image: ${({
-    theme
-  }) => `radial-gradient(circle at center, ${theme.gray}35 1px, transparent 0),
-    radial-gradient(circle at center, ${theme.gray}35 1px, transparent 0)`};
-  background-size: 30px 30px;
-  background-position: 0 0, 15px 15px;
-  z-index: -1;
-
-  &::before {
-    content: "";
-    position: absolute;
-    left: 0px;
-    right: 0px;
-    top: 0px;
-    height: 50px;
-    background: ${({ theme }) =>
-      `linear-gradient(to bottom, ${theme.background1} 0%, transparent 50%)`};
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    height: 500px;
-    background: ${({ theme }) => `linear-gradient(0deg, ${theme.background1} 0%, transparent 65%)`};
-  }
-`;

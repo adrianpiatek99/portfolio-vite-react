@@ -1,11 +1,9 @@
 import type { ComponentPropsWithRef, MouseEvent, Ref } from "react";
 import { forwardRef } from "react";
 
-import styled from "styled-components";
 import { handleCreateRippleEffect } from "utils/rippleUtils";
 
-import type { ButtonElementProps, ButtonTextAlign } from "./buttonStyle";
-import { generalButtonStyles } from "./buttonStyle";
+import type { ButtonTextAlign } from "./types";
 
 interface ButtonProps extends ComponentPropsWithRef<"button"> {
   fullWidth?: boolean;
@@ -24,24 +22,18 @@ export const Button = forwardRef(
     };
 
     return (
-      <ButtonElement
-        $fullWidth={fullWidth}
-        textAlign={textAlign}
+      <button
+        className={`relative flex items-center bg-primary ${
+          textAlign === "center" ? "justify-center" : "justify-start"
+        } ${
+          fullWidth ? "w-fill" : "w-max"
+        } h-[36px] px-4 rounded-md font-medium select-none overflow-hidden duration-200 text-m will-change-transform hover:bg-primary/50 focus-visible:bg-primary/40 focus-visible:shadow-[inset_0px_0px_0px_2px_theme('colors.primary')]`}
         {...props}
         onClick={handleClick}
         ref={ref}
       >
-        <span>{children}</span>
-      </ButtonElement>
+        <span className="z-1">{children}</span>
+      </button>
     );
   }
 );
-
-const ButtonElement = styled.button<ButtonElementProps>`
-  ${generalButtonStyles};
-  background-color: ${({ theme }) => theme.primary};
-
-  & > span {
-    z-index: 1;
-  }
-`;
