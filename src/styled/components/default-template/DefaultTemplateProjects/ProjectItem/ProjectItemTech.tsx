@@ -1,30 +1,11 @@
 import { Typography } from "components/core";
 import type { ProjectTech } from "constants/projects";
-import styled from "styled-components";
 
 export const ProjectItemTech = ({ tech, icon: Icon }: ProjectTech) => {
   return (
-    <TechItem>
-      <Icon />
-      <Typography size="xs" truncate>
-        {tech}
-      </Typography>
-    </TechItem>
+    <li className="flex gap-[6px] align-center min-w-0 bg-primary/50 py-[6px] px-[12px] rounded-[20px]">
+      <Icon className="w-[14px] h-[14px]" />
+      <Typography className="text-xs truncate">{tech}</Typography>
+    </li>
   );
 };
-
-const TechItem = styled.li`
-  display: flex;
-  gap: 6px;
-  align-items: center;
-  min-width: 0px;
-  background-color: ${({ theme }) => theme.primary}70;
-  padding: 6px 12px;
-  border-radius: 20px;
-  cursor: default;
-
-  & > svg {
-    width: 14px;
-    height: 14px;
-  }
-`;

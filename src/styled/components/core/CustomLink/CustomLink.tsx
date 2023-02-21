@@ -1,52 +1,24 @@
-import type { ComponentPropsWithoutRef, ReactNode } from "react";
+import type { ComponentPropsWithoutRef, ReactElement } from "react";
+import { cloneElement } from "react";
 import { Link } from "react-router-dom";
-
-import styled from "styled-components";
 
 interface CustomLinkProps extends ComponentPropsWithoutRef<"a"> {
   href: string;
-  icon?: ReactNode;
+  icon?: ReactElement;
 }
 
 export const CustomLink = ({ children, href, icon, ...props }: CustomLinkProps) => {
   return (
-    <LinkElement to={href} {...props}>
-      {icon && icon}
+    <Link
+      className="relative flex align-center text-primary font-semibold text-l duration-200 hover:opacity-70 active:brightness-125 focus-visible:shadow-[0px_1px_0px_theme('colors.current')] sm:text-xl"
+      to={href}
+      {...props}
+    >
+      {icon &&
+        cloneElement(icon, {
+          className: "self-center w-[22px] h-[22px] mr-[10px]"
+        })}
       {children}
-    </LinkElement>
+    </Link>
   );
 };
-
-const LinkElement = styled(Link)`
-  position: relative;
-  display: flex;
-  align-items: center;
-  color: ${({ theme }) => theme.primary};
-  font-weight: 600;
-  transition: opacity 0.2s, filter 0.2s, box-shadow 0.2s;
-  ${({ theme }) => theme.text.l};
-
-  & > svg {
-    width: 22px;
-    height: 22px;
-    margin-right: 10px;
-  }
-
-  @media (hover: hover) {
-    &:hover:not(:disabled) {
-      opacity: 0.65;
-    }
-  }
-
-  &:active {
-    filter: brightness(1.2);
-  }
-
-  &:focus-visible {
-    box-shadow: 0px 1px 0px currentColor;
-  }
-
-  @media ${({ theme }) => theme.breakpoints.sm} {
-    ${({ theme }) => theme.text.xl};
-  }
-`;

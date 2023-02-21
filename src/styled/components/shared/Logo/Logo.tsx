@@ -1,5 +1,3 @@
-import styled from "styled-components";
-
 export const Logo = () => {
   const scrollToTop = () =>
     window.scrollTo({
@@ -9,29 +7,11 @@ export const Logo = () => {
     });
 
   return (
-    <ButtonElement onClick={scrollToTop}>
+    <button
+      className="text-color1 font-bold text-2xl sm:text-3xl duration-200 sm:hover:text-primary focus-visible:text-primary"
+      onClick={scrollToTop}
+    >
       <span>Portfolio</span>
-    </ButtonElement>
+    </button>
   );
 };
-
-const ButtonElement = styled.button`
-  color: ${({ theme }) => theme.color1};
-  font-weight: 700;
-  cursor: pointer;
-  ${({ theme }) => theme.heading.xs};
-
-  @media (hover: hover) {
-    &:hover:not(:disabled) {
-      color: ${({ theme }) => theme.primary};
-    }
-  }
-
-  &:focus-visible {
-    color: ${({ theme }) => theme.primary};
-  }
-
-  @media ${({ theme }) => theme.breakpoints.sm} {
-    ${({ theme }) => theme.heading.s};
-  }
-`;

@@ -1,7 +1,6 @@
 import type { ComponentPropsWithoutRef, ReactElement } from "react";
 
 import Tippy from "@tippyjs/react";
-import styled from "styled-components";
 
 interface TooltipProps extends Omit<ComponentPropsWithoutRef<typeof Tippy>, "theme"> {
   children: ReactElement;
@@ -10,7 +9,8 @@ interface TooltipProps extends Omit<ComponentPropsWithoutRef<typeof Tippy>, "the
 
 export const Tooltip = ({ children, content, ...props }: TooltipProps) => {
   return content ? (
-    <TippyWrapper
+    <Tippy
+      className="bg-gray/30 py-[6px] px-[8px] rounded-md text-xs"
       hideOnClick
       content={content}
       arrow={false}
@@ -21,16 +21,8 @@ export const Tooltip = ({ children, content, ...props }: TooltipProps) => {
       {...props}
     >
       {children}
-    </TippyWrapper>
+    </Tippy>
   ) : (
     children
   );
 };
-
-const TippyWrapper = styled(Tippy)`
-  background-color: ${({ theme }) => theme.gray}40;
-  color: ${({ theme }) => theme.color1};
-  padding: 6px 8px;
-  border-radius: 6px;
-  ${({ theme }) => theme.text.xs}
-`;

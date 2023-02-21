@@ -4,7 +4,6 @@ import { IconButton, Typography } from "components/core";
 import type { Project } from "constants/projects";
 import GithubIcon from "icons/GithubIcon";
 import PinIcon from "icons/PinIcon";
-import styled, { useTheme } from "styled-components";
 
 import { ProjectItemExternalLink } from "./ProjectItemExternalLink";
 import { ProjectItemTech } from "./ProjectItemTech";
@@ -18,35 +17,44 @@ export const ProjectItem = ({
   techs,
   isPinned
 }: Project) => {
-  const { primary } = useTheme();
-
   return (
-    <Wrapper className="animate-hidden">
+    <div className="group animate-hidden relative flex flex-col gap-[20px] pb-[10px]">
       {isPinned && (
-        <PinIconWrapper>
+        <div className="absolute top-[-8px] left-[-8px] text-primary z-5 pointer-events-none [&>svg]:w-[24px] [&>svg]:h-[24px] [&>svg]:rotate-[270deg]">
           <PinIcon />
-        </PinIconWrapper>
+        </div>
       )}
-      <LinkElement to={url} target="_blank" rel="noopener noreferrer">
-        <ImageWrapper>
-          <Image alt={title} src={image} loading="lazy" draggable="false" />
-        </ImageWrapper>
+      <Link
+        className="group/imgLink relative w-full"
+        to={url}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <div className="relative max-w-full rounded-lg pb-[calc(100%+50px)] overflow-hidden duration-200 shadow-[0px_4px_7px_theme(colors.background2)] group-hover:opacity-50 group-focus-visible/imgLink:shadow-[0px_0px_0px_2px_theme(colors.primary)]">
+          <img
+            className="absolute left-0 top-0 h-full w-full object-cover select-none duration-300 group-hover:scale-[1.015]"
+            alt={title}
+            src={image}
+            loading="lazy"
+            draggable="false"
+          />
+        </div>
         <ProjectItemExternalLink />
-      </LinkElement>
-      <Content>
+      </Link>
+      <div className="flex flex-col gap-[12px] whitespace-pre-line">
         {isPinned && (
-          <Typography size="l" customColor={primary} weight={700}>
+          <Typography className="text-primary text-l" weight="bold">
             Pinned
           </Typography>
         )}
-        <Typography size="xl">{title}</Typography>
-        <Typography color="secondary">{description}</Typography>
-        <BottomRow>
-          <ProjectTechs>
+        <Typography className="text-xl">{title}</Typography>
+        <Typography className="text-color2">{description}</Typography>
+        <div className="grid grid-cols-[1fr_auto] items-start gap-[12px] [&>a]:mt-[-5px]">
+          <ul className="inline-flex flex-wrap align-center gap-[12px]">
             {techs.map((projectTech) => (
               <ProjectItemTech key={projectTech.tech} {...projectTech} />
             ))}
-          </ProjectTechs>
+          </ul>
           {githubUrl && (
             <Link to={githubUrl} target="_blank" rel="noopener noreferrer" tabIndex={-1}>
               <IconButton title="GitHub Repository">
@@ -54,115 +62,8 @@ export const ProjectItem = ({
               </IconButton>
             </Link>
           )}
-        </BottomRow>
-      </Content>
-    </Wrapper>
+        </div>
+      </div>
+    </div>
   );
 };
-
-const Wrapper = styled.div`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding-bottom: 10px;
-`;
-
-const PinIconWrapper = styled.div`
-  position: absolute;
-  top: -8px;
-  left: -8px;
-  color: ${({ theme }) => theme.primary};
-  z-index: 5;
-  pointer-events: none;
-
-  & > svg {
-    width: 24px;
-    height: 24px;
-    transform: rotate(270deg);
-  }
-`;
-
-const LinkElement = styled(Link)`
-  position: relative;
-  width: 100%;
-
-  @media (hover: hover) {
-    &:hover > button {
-      opacity: 1;
-      transform: none;
-      pointer-events: all;
-      visibility: visible;
-    }
-  }
-
-  &:focus-visible > button {
-    opacity: 1;
-    transform: none;
-    pointer-events: all;
-    visibility: visible;
-  }
-`;
-
-const ImageWrapper = styled.div`
-  position: relative;
-  max-width: 100%;
-  padding-bottom: calc(100% + 50px);
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 7px ${({ theme }) => theme.background2};
-  transition: opacity 0.3s, box-shadow 0.2s;
-
-  @media (hover: hover) {
-    ${Wrapper}:hover & {
-      opacity: 0.5;
-    }
-  }
-
-  ${LinkElement}:focus-visible & {
-    box-shadow: 0px 0px 0px 2px ${({ theme }) => theme.primary};
-  }
-`;
-
-const Image = styled.img`
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  user-select: none;
-  -webkit-user-select: none;
-  transition: transform 0.3s;
-
-  @media (hover: hover) {
-    ${Wrapper}:hover & {
-      transform: scale(1.015);
-    }
-  }
-`;
-
-const Content = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  white-space: pre-line;
-`;
-
-const BottomRow = styled.div`
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: start;
-  gap: 12px;
-
-  & > a {
-    margin-top: -5px;
-  }
-`;
-
-const ProjectTechs = styled.ul`
-  display: inline-flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 12px;
-`;

@@ -4,7 +4,6 @@ import FocusLock from "react-focus-lock";
 import { ButtonScrollTo, IconButton } from "components/core";
 import { AnimatePresence, motion } from "framer-motion";
 import CloseIcon from "icons/CloseIcon";
-import styled from "styled-components";
 
 interface HeaderMobileMenuProps {
   isOpen: boolean;
@@ -17,38 +16,55 @@ export const HeaderMobileMenu = ({ isOpen, onClose, isPinned }: HeaderMobileMenu
     <AnimatePresence>
       {isOpen && (
         <>
-          <Overlay onClick={onClose} />
+          <div className="fixed inset-0" onClick={onClose} />
           <FocusLock autoFocus={false}>
-            <Panel
-              isPinned={isPinned}
+            <motion.div
+              className={`fixed ${
+                isPinned ? "top-[10px]" : "top-[60px]"
+              } right-[17px] left-[17px] flex sm:hidden flex-col gap-[2px] p-[12px] rounded-md bg-background2 border border-border1 z-50 shadow-[0px_4px_7px_theme('colors.background1')] ease-out duration-100`}
               initial="inactive"
               animate="active"
               exit="inactive"
               variants={panelVariants}
             >
-              <TopRow>
+              <div className="flex align-center justify-end">
                 <IconButton title="Close" onClick={onClose}>
                   <CloseIcon />
                 </IconButton>
-              </TopRow>
-              <Menu>
-                <li>
-                  <ButtonScrollTo onClick={onClose} elementId="about-me" fullWidth textAlign="left">
+              </div>
+              <ul className="flex flex-col w-full gap-[2px]">
+                <li className="w-full [&>button]:w-full">
+                  <ButtonScrollTo
+                    onClick={onClose}
+                    elementId="about-me"
+                    textAlign="left"
+                    className="w-full"
+                  >
                     About me
                   </ButtonScrollTo>
                 </li>
-                <li>
-                  <ButtonScrollTo onClick={onClose} elementId="projects" fullWidth textAlign="left">
+                <li className="w-full [&>button]:w-full">
+                  <ButtonScrollTo
+                    onClick={onClose}
+                    elementId="projects"
+                    textAlign="left"
+                    className="w-full"
+                  >
                     Projects
                   </ButtonScrollTo>
                 </li>
-                <li>
-                  <ButtonScrollTo onClick={onClose} elementId="contact" fullWidth textAlign="left">
+                <li className="w-full [&>button]:w-full">
+                  <ButtonScrollTo
+                    onClick={onClose}
+                    elementId="contact"
+                    textAlign="left"
+                    className="w-full"
+                  >
                     Contact
                   </ButtonScrollTo>
                 </li>
-              </Menu>
-            </Panel>
+              </ul>
+            </motion.div>
           </FocusLock>
         </>
       )}
@@ -70,42 +86,3 @@ const panelVariants = {
     transition: { duration: 0.15 }
   }
 };
-
-const Panel = styled(motion.div)<{ isPinned: boolean }>`
-  position: fixed;
-  top: ${({ isPinned }) => (isPinned ? "10px" : "60px")};
-  right: 17px;
-  left: 17px;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  padding: 12px;
-  border: 1px solid ${({ theme }) => theme.border1};
-  border-radius: 6px;
-  background-color: ${({ theme }) => theme.background2};
-  z-index: 55;
-  box-shadow: 0 4px 7px ${({ theme }) => theme.background1};
-  transition: top 0.1s;
-
-  @media ${({ theme }) => theme.breakpoints.sm} {
-    display: none;
-  }
-`;
-
-const TopRow = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-`;
-
-const Menu = styled.ul`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  gap: 2px;
-`;
-
-const Overlay = styled.div`
-  position: fixed;
-  inset: 0px;
-`;

@@ -1,6 +1,5 @@
 import { Footer } from "shared/Footer";
 import { Header } from "shared/Header";
-import styled from "styled-components";
 
 import { DefaultTemplateAboutMe } from "./DefaultTemplateAboutMe";
 import { DefaultTemplateBackground } from "./DefaultTemplateBackground";
@@ -9,30 +8,15 @@ import { DefaultTemplateProjects } from "./DefaultTemplateProjects";
 
 export const DefaultTemplate = () => {
   return (
-    <Main>
+    <main className="relative flex flex-col">
       <Header />
-      <InnerWrapper>
+      <div className="flex flex-col max-w-[1240px] w-full mx-auto p-[30px]">
         <DefaultTemplateBackground />
         <DefaultTemplateAboutMe />
         <DefaultTemplateProjects />
         <DefaultTemplateContact />
-      </InnerWrapper>
+      </div>
       <Footer />
-    </Main>
+    </main>
   );
 };
-
-const Main = styled.main`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-`;
-
-const InnerWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  max-width: 1240px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 30px;
-`;
