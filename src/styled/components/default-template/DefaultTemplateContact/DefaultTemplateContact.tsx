@@ -13,7 +13,7 @@ export const DefaultTemplateContact = () => {
     <section id="contact" className="flex flex-col">
       <div className="flex flex-col gap-[40px] w-full my-[84px] mx-auto sm:my-[124px] lg:flex-row">
         <div className="animate-hidden flex flex-col w-full h-full lg:sticky lg:top-[70px]">
-          <Typography heading tag="h2" weight="semibold" className="text-5xl sm:text-7xl">
+          <Typography tag="h2" weight="semibold" className="text-5xl sm:text-7xl">
             Contact
           </Typography>
         </div>

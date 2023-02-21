@@ -7,7 +7,6 @@ interface TypographyProps extends ComponentPropsWithoutRef<"span"> {
   tag?: TypographyTag;
   weight?: TypographyWeight;
   center?: boolean;
-  heading?: boolean;
 }
 
 export const Typography = ({ weight = "normal", center = false, ...props }: TypographyProps) => {

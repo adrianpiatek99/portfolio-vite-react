@@ -9,7 +9,7 @@ export const DefaultTemplateAboutMe = () => {
     <section id="about-me" className="animate-hidden flex flex-col min-h-[65vh]">
       <div className="flex flex-col gap-[30px] w-full mx-auto my-[84px] sm:my-[124px] lg:flex-row">
         <div className="flex flex-col w-full h-full lg:sticky lg:top-[70px]">
-          <Typography heading tag="h2" weight="semibold" className="text-5xl sm:text-7xl">
+          <Typography tag="h2" weight="semibold" className="text-5xl sm:text-7xl">
             Adrian Piątek
           </Typography>
         </div>
