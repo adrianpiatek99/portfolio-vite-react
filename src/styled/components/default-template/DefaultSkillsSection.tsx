@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { skills } from "constants/skills";
 import { Section } from "shared/Section";
 
-export const DefaultTemplateSkills = () => {
+export const DefaultSkillsSection = () => {
   return (
     <Section id="skills" headingText="Skills">
       <div className="flex flex-col gap-[40px] w-full">

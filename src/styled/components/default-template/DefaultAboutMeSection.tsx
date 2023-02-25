@@ -5,7 +5,7 @@ import { GITHUB_URL } from "constants/links";
 import GithubIcon from "icons/GithubIcon";
 import { Section } from "shared/Section";
 
-export const DefaultTemplateAboutMe = () => {
+export const DefaultAboutMeSection = () => {
   return (
     <Section id="about-me" headingText="Adrian Piątek">
       <div className="animate-hidden flex flex-col w-full gap-[30px]">

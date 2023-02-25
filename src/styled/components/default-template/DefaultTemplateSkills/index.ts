@@ -1,1 +1,0 @@
-export { DefaultTemplateSkills } from "./DefaultTemplateSkills";

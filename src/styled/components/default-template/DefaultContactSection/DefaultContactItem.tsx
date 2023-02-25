@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import { Button, CustomLink, Typography } from "components/core";
 import ExternalLinkIcon from "icons/ExternalLinkIcon";
 
-interface DefaultTemplateContactItemProps {
+interface DefaultContactItemProps {
   icon: ReactNode;
   title: string;
   text?: string;
@@ -12,14 +12,14 @@ interface DefaultTemplateContactItemProps {
   onClick?: () => void;
 }
 
-export const DefaultTemplateContactItem = ({
+export const DefaultContactItem = ({
   icon,
   title,
   text,
   href,
   buttonText,
   onClick
-}: DefaultTemplateContactItemProps) => {
+}: DefaultContactItemProps) => {
   return (
     <div className="animate-hidden flex gap-[30px] sm:gap-[40px]">
       <div className="flex [&>svg]:h-[40px] [&>svg]:w-[40px] [&>svg]:text-color2/60">{icon}</div>

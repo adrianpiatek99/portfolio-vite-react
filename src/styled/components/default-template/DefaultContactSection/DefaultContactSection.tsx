@@ -6,22 +6,22 @@ import LinkedinIcon from "icons/LinkedinIcon";
 import MailIcon from "icons/MailIcon";
 import { Section } from "shared/Section";
 
-import { DefaultTemplateContactItem } from "./DefaultTemplateContactItem";
+import { DefaultContactItem } from "./DefaultContactItem";
 
-export const DefaultTemplateContact = () => {
+export const DefaultContactSection = () => {
   return (
     <Section id="contact" headingText="Contact">
       <div className="flex flex-col w-full gap-[60px] mt-[7px]">
         <CopyToClipboard text={EMAIL_ADDRESS}>
-          <DefaultTemplateContactItem
+          <DefaultContactItem
             icon={<MailIcon />}
             title="Email address"
             text={EMAIL_ADDRESS}
             buttonText="Copy to clipboard"
           />
         </CopyToClipboard>
-        <DefaultTemplateContactItem icon={<LinkedinIcon />} title="LinkedIn" href={LINKEDIN_URL} />
-        <DefaultTemplateContactItem icon={<GithubIcon />} title="GitHub" href={GITHUB_URL} />
+        <DefaultContactItem icon={<LinkedinIcon />} title="LinkedIn" href={LINKEDIN_URL} />
+        <DefaultContactItem icon={<GithubIcon />} title="GitHub" href={GITHUB_URL} />
       </div>
     </Section>
   );
