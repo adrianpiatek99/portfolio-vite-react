@@ -28,7 +28,6 @@ export const ButtonScrollTo = forwardRef(
 
     return (
       <button
-        data-color="#f00"
         {...props}
         className={`relative flex items-center w-max ${
           textAlign === "center" ? "justify-center" : "justify-start"

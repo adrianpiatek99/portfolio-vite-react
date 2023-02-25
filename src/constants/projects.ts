@@ -1,5 +1,4 @@
 import type { IconType } from "react-icons/lib";
-import { SiTailwindcss } from "react-icons/si";
 
 import CurrentPortfolioUrl from "assets/projects/current-portfolio.png?url";
 import MemoryGameUrl from "assets/projects/memory-game.png?url";
@@ -15,14 +14,16 @@ import ReactIcon from "icons/ReactIcon";
 import ReduxIcon from "icons/ReduxIcon";
 import StorybookIcon from "icons/StorybookIcon";
 import StyledComponentsIcon from "icons/StyledComponentsIcon";
+import TailwindIcon from "icons/TailwindIcon";
 import TestIcon from "icons/TestIcon";
+import TrpcIcon from "icons/TrpcIcon";
 import TypescriptIcon from "icons/TypescriptIcon";
 import ViteIcon from "icons/ViteIcon";
 
 const techTypes = [
   "Next.js",
   "TypeScript",
-  "Vite + React",
+  "Vite",
   "Jest + RTL",
   "React",
   "Redux",
@@ -33,7 +34,9 @@ const techTypes = [
   "Airtable",
   "AWS",
   "@craftjs/core",
-  "Tailwind CSS"
+  "Tailwind CSS",
+  "tRPC",
+  "Svelte"
 ] as const;
 
 type TechTuple = typeof techTypes;
@@ -54,7 +57,7 @@ const nextjsTech: ProjectTech = { tech: "Next.js", icon: NextjsIcon };
 const typeScriptTech: ProjectTech = { tech: "TypeScript", icon: TypescriptIcon };
 const prismaTech: ProjectTech = { tech: "Prisma", icon: PrismaIcon };
 const styledComponentsTech: ProjectTech = { tech: "Styled Components", icon: StyledComponentsIcon };
-const viteReactTech: ProjectTech = { tech: "Vite + React", icon: ViteIcon };
+const viteReactTech: ProjectTech = { tech: "Vite", icon: ViteIcon };
 const reactTech: ProjectTech = { tech: "React", icon: ReactIcon };
 const reduxTech: ProjectTech = { tech: "Redux", icon: ReduxIcon };
 const testTech: ProjectTech = { tech: "Jest + RTL", icon: TestIcon };
@@ -63,7 +66,9 @@ const storybookTech: ProjectTech = { tech: "Storybook", icon: StorybookIcon };
 const airtableTech: ProjectTech = { tech: "Airtable", icon: AirtableIcon };
 const awsTech: ProjectTech = { tech: "AWS", icon: AwsIcon };
 const craftjsTech: ProjectTech = { tech: "@craftjs/core", icon: BuildIcon };
-const tailwindCss: ProjectTech = { tech: "Tailwind CSS", icon: SiTailwindcss };
+const tailwindCssTech: ProjectTech = { tech: "Tailwind CSS", icon: TailwindIcon };
+const trpcTech: ProjectTech = { tech: "tRPC", icon: TrpcIcon };
+// const svelteTech: ProjectTech = { tech: "Svelte", icon: SvelteIcon };
 
 export const projects: Project[] = [
   {
@@ -76,6 +81,7 @@ export const projects: Project[] = [
     techs: [
       nextjsTech,
       typeScriptTech,
+      trpcTech,
       prismaTech,
       testTech,
       styledComponentsTech,
@@ -109,7 +115,7 @@ export const projects: Project[] = [
     image: CurrentPortfolioUrl,
     url: "/",
     githubUrl: "https://github.com/adrianpiatek99/portfolio-vite-react",
-    techs: [viteReactTech, typeScriptTech, tailwindCss]
+    techs: [reactTech, viteReactTech, typeScriptTech, tailwindCssTech]
   },
   {
     title: "Old portfolio",
