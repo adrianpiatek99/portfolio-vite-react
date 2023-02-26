@@ -1,160 +1,172 @@
+import cypressIcon from "assets/icons/cypress.svg";
+import eslintIcon from "assets/icons/eslint.svg";
+import gatsbyIcon from "assets/icons/gatsby.svg";
+import graphqlIcon from "assets/icons/graphql.svg";
+import jestIcon from "assets/icons/jest.svg";
+import materialUiIcon from "assets/icons/material-ui.svg";
+import mswIcon from "assets/icons/msw.svg";
+import nextjsIcon from "assets/icons/next-js.svg";
+import playwrightIcon from "assets/icons/playwright.svg";
+import prettierIcon from "assets/icons/prettier.svg";
+import prismaIcon from "assets/icons/prisma.svg";
+import reactIcon from "assets/icons/react.svg";
+import reactHookFormIcon from "assets/icons/react-hook-form.svg";
+import reactQueryIcon from "assets/icons/react-query.svg";
+import reactTestingLibraryIcon from "assets/icons/react-testing-library.svg";
+import reduxIcon from "assets/icons/redux.svg";
+import storybookIcon from "assets/icons/storybook.svg";
+import styledComponentsIcon from "assets/icons/styled-components.svg";
+import svelteIcon from "assets/icons/svelte.svg";
+import tailwindcssIcon from "assets/icons/tailwind-css.svg";
+import trpcIcon from "assets/icons/trpc.svg";
+import typescriptIcon from "assets/icons/typescript.svg";
+import viteIcon from "assets/icons/vite.svg";
+import yupIcon from "assets/icons/yup.svg";
+import zodIcon from "assets/icons/zod.svg";
+import zustandIcon from "assets/icons/zustand.svg";
+
 type Skill = {
   src: string;
   website: string;
   text: string;
 };
-type SkillLevel = 1 | 2 | 3 | 4 | 5;
-
-type ExperiencedWithSkill = Skill & { level: SkillLevel };
 
 export const skills: {
-  experiencedWith: ExperiencedWithSkill[];
-  also: Skill[];
+  experiencedWith: Skill[];
   wantToLearn: Skill[];
 } = {
   experiencedWith: [
     {
-      src: "src/assets/skills/next-js.svg",
+      src: nextjsIcon,
       website: "https://nextjs.org",
-      text: "Next.js",
-      level: 4
+      text: "Next.js"
     },
     {
-      src: "src/assets/skills/react.svg",
+      src: reactIcon,
       website: "https://reactjs.org",
-      text: "React.js",
-      level: 5
+      text: "React.js"
     },
     {
-      src: "src/assets/skills/svelte.svg",
+      src: svelteIcon,
       website: "https://svelte.dev",
-      text: "Svelte",
-      level: 2
+      text: "Svelte"
     },
     {
-      src: "src/assets/skills/typescript.svg",
+      src: typescriptIcon,
       website: "https://www.typescriptlang.org",
-      text: "TypeScript",
-      level: 4
+      text: "TypeScript"
     },
     {
-      src: "src/assets/skills/prisma.svg",
+      src: prismaIcon,
       website: "https://www.prisma.io",
-      text: "Prisma",
-      level: 4
+      text: "Prisma"
     },
     {
-      src: "src/assets/skills/trpc.svg",
+      src: trpcIcon,
       website: "https://trpc.io",
-      text: "tRPC",
-      level: 2
+      text: "tRPC"
     },
     {
-      src: "src/assets/skills/redux.svg",
+      src: reduxIcon,
       website: "https://redux-toolkit.js.org",
-      text: "Redux Toolkit",
-      level: 4
+      text: "Redux Toolkit"
     },
     {
-      src: "src/assets/skills/storybook.svg",
+      src: storybookIcon,
       website: "https://storybook.js.org",
-      text: "Storybook",
-      level: 3
+      text: "Storybook"
     },
     {
-      src: "src/assets/skills/react-query.svg",
+      src: reactQueryIcon,
       website: "https://tanstack.com/query/latest",
-      text: "React Query",
-      level: 4
+      text: "React Query"
     },
     {
-      src: "src/assets/skills/react-hook-form.svg",
+      src: reactHookFormIcon,
       website: "https://react-hook-form.com",
-      text: "React Hook Form",
-      level: 4
+      text: "React Hook Form"
     },
     {
-      src: "src/assets/skills/tailwind-css.svg",
+      src: tailwindcssIcon,
       website: "https://tailwindcss.com",
-      text: "Tailwind CSS",
-      level: 5
+      text: "Tailwind CSS"
     },
     {
-      src: "src/assets/skills/styled-components.svg",
+      src: styledComponentsIcon,
       website: "https://styled-components.com",
-      text: "Styled Components",
-      level: 5
+      text: "Styled Components"
     },
     {
-      src: "src/assets/skills/material-ui.svg",
+      src: materialUiIcon,
       website: "https://mui.com/core/",
-      text: "Material UI",
-      level: 4
+      text: "Material UI"
     },
     {
-      src: "src/assets/skills/eslint.svg",
+      src: eslintIcon,
       website: "https://eslint.org",
-      text: "ESLint",
-      level: 3
+      text: "ESLint"
     },
     {
-      src: "src/assets/skills/prettier.svg",
+      src: prettierIcon,
       website: "https://prettier.io",
-      text: "Prettier",
-      level: 3
+      text: "Prettier"
     },
     {
-      src: "src/assets/skills/vite.svg",
+      src: viteIcon,
       website: "https://vitejs.dev",
-      text: "Vite",
-      level: 3
+      text: "Vite"
     },
     {
-      src: "src/assets/skills/jest.svg",
+      src: jestIcon,
       website: "https://jestjs.io",
-      text: "Jest",
-      level: 3
+      text: "Jest"
     },
     {
-      src: "src/assets/skills/react-testing-library.svg",
+      src: reactTestingLibraryIcon,
       website: "https://testing-library.com/docs/react-testing-library/intro/",
-      text: "RTL",
-      level: 3
+      text: "RTL"
     },
     {
-      src: "src/assets/skills/msw.svg",
+      src: mswIcon,
       website: "https://mswjs.io",
-      text: "msw",
-      level: 3
-    }
-  ],
-  also: [
+      text: "msw"
+    },
     {
-      src: "src/assets/skills/zod.svg",
+      src: zodIcon,
       website: "https://zod.dev",
       text: "Zod ❤️"
     },
     {
-      src: "src/assets/skills/yup.svg",
+      src: yupIcon,
       website: "https://github.com/jquense/yup",
       text: "Yup"
     },
     {
-      src: "src/assets/skills/zustand.svg",
+      src: zustandIcon,
       website: "https://zustand-demo.pmnd.rs",
       text: "Zustand ❤️"
+    },
+    {
+      src: gatsbyIcon,
+      website: "https://www.gatsbyjs.com",
+      text: "Gatsby"
     }
   ],
   wantToLearn: [
     {
-      src: "src/assets/skills/graphql.svg",
+      src: graphqlIcon,
       website: "https://graphql.org",
       text: "GraphQL"
     },
     {
-      src: "src/assets/skills/cypress.svg",
+      src: cypressIcon,
       website: "https://www.cypress.io",
       text: "Cypress"
+    },
+    {
+      src: playwrightIcon,
+      website: "https://playwright.dev",
+      text: "Playwright"
     }
   ]
 };

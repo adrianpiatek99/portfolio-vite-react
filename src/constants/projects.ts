@@ -14,6 +14,7 @@ import ReactIcon from "icons/ReactIcon";
 import ReduxIcon from "icons/ReduxIcon";
 import StorybookIcon from "icons/StorybookIcon";
 import StyledComponentsIcon from "icons/StyledComponentsIcon";
+import SvelteIcon from "icons/SvelteIcon";
 import TailwindIcon from "icons/TailwindIcon";
 import TestIcon from "icons/TestIcon";
 import TrpcIcon from "icons/TrpcIcon";
@@ -68,7 +69,7 @@ const awsTech: ProjectTech = { tech: "AWS", icon: AwsIcon };
 const craftjsTech: ProjectTech = { tech: "@craftjs/core", icon: BuildIcon };
 const tailwindCssTech: ProjectTech = { tech: "Tailwind CSS", icon: TailwindIcon };
 const trpcTech: ProjectTech = { tech: "tRPC", icon: TrpcIcon };
-// const svelteTech: ProjectTech = { tech: "Svelte", icon: SvelteIcon };
+const svelteTech: ProjectTech = { tech: "Svelte", icon: SvelteIcon };
 
 export const projects: Project[] = [
   {
@@ -110,12 +111,12 @@ export const projects: Project[] = [
     isPinned: true
   },
   {
-    title: "Current portfolio",
-    description: "Portfolio website.",
+    title: "Svelte portfolio",
+    description: "Portfolio website built with svelte and vite.",
     image: CurrentPortfolioUrl,
-    url: "/",
+    url: "https://adrian-piatek-portfolio2.vercel.app",
     githubUrl: "https://github.com/adrianpiatek99/portfolio-vite-react",
-    techs: [reactTech, viteReactTech, typeScriptTech, tailwindCssTech]
+    techs: [svelteTech, viteReactTech, typeScriptTech, tailwindCssTech]
   },
   {
     title: "Old portfolio",
