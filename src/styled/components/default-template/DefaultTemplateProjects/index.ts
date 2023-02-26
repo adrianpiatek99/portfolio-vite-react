@@ -1,1 +1,0 @@
-export { DefaultTemplateProjects } from "./DefaultTemplateProjects";
