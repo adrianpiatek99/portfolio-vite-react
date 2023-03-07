@@ -30,7 +30,7 @@ export const ProjectItem = ({
         target="_blank"
         rel="noopener noreferrer"
       >
-        <div className="relative max-w-full rounded-lg pb-[calc(100%+50px)] overflow-hidden duration-200 shadow-[0px_4px_7px_theme(colors.background2)] group-hover:opacity-50 group-focus-visible/imgLink:shadow-[0px_0px_0px_2px_theme(colors.primary)]">
+        <div className="relative max-w-full rounded-lg pb-[75%] overflow-hidden duration-200 shadow-[0px_4px_7px_theme(colors.background2)] group-hover:opacity-50 group-focus-visible/imgLink:shadow-[0px_0px_0px_2px_theme(colors.primary)]">
           <img
             className="absolute left-0 top-0 h-full w-full object-cover select-none duration-300 group-hover:scale-[1.015]"
             alt={title}
