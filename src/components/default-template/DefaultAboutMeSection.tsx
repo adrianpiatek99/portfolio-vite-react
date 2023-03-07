@@ -14,7 +14,7 @@ export const DefaultAboutMeSection = () => {
         </Typography>
         <Typography tag="p" className="text-color2 text-l sm:text-xl whitespace-pre-line">
           {
-            "Hello and welcome to my portfolio! \n Passionate about web development and a bit of design. My journey with web dev development started at the turn of 2020 and 2021."
+            "Hello and welcome to my portfolio! \n Passionate about web development and a bit of design. My journey in this direction started at the turn of 2020 and 2021."
           }
         </Typography>
         <div className="flex gap-[12px]">
