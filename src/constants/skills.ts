@@ -67,6 +67,11 @@ export const skills: {
       text: "tRPC"
     },
     {
+      src: graphqlIcon,
+      website: "https://graphql.org",
+      text: "GraphQL"
+    },
+    {
       src: reduxIcon,
       website: "https://redux-toolkit.js.org",
       text: "Redux Toolkit"
@@ -153,11 +158,6 @@ export const skills: {
     }
   ],
   wantToLearn: [
-    {
-      src: graphqlIcon,
-      website: "https://graphql.org",
-      text: "GraphQL"
-    },
     {
       src: reactIcon,
       website: "https://reactnative.dev",
