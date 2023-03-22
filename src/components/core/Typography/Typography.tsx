@@ -14,15 +14,13 @@ export const Typography = ({
   tag = "span",
   weight = "normal",
   center = false,
+  className = "",
   ...props
 }: TypographyProps) => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { className, ...restProps } = props;
 
   return createElement(tag, {
-    className: `font-${weight} text-${center ? "center" : "left"} ${
-      props?.className ? props?.className : ""
-    }`,
-    ...restProps
+    className: `font-${weight} text-${center ? "center" : "left"} ${className}`,
+    ...props
   });
 };

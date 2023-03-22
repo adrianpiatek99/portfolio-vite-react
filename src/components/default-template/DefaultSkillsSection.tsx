@@ -9,7 +9,7 @@ export const DefaultSkillsSection = () => {
       <div className="flex flex-col gap-[40px] w-full">
         <div className="flex flex-col gap-[30px]">
           <h3 className="animate-hidden text-xl font-semibold">Experienced with</h3>
-          <div className="grid grid-cols-[repeat(auto-fill,minmax(145px,_1fr))] w-full gap-[30px] sm:grid-cols-3 lg:grid-cols-2">
+          <div className="grid grid-cols-[repeat(auto-fill,minmax(145px,_1fr))] w-full gap-[30px] sm:grid-cols-3 lg:grid-cols-4">
             {skills.experiencedWith.map(({ src, website, text }) => (
               <div className="animate-hidden flex flex-col gap-[10px]" key={website}>
                 <Link
@@ -29,7 +29,7 @@ export const DefaultSkillsSection = () => {
         </div>
         <div className="flex flex-col gap-[30px]">
           <h3 className="animate-hidden text-xl font-semibold">Want to learn</h3>
-          <div className="grid grid-cols-2 w-full gap-[30px] sm:grid-cols-3 lg:grid-cols-2">
+          <div className="grid grid-cols-2 w-full gap-[30px] sm:grid-cols-3 lg:grid-cols-4">
             {skills.wantToLearn.map(({ src, website, text }) => (
               <Link
                 key={website}
