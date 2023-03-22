@@ -8,7 +8,7 @@ import { Section } from "shared/Section";
 export const DefaultAboutMeSection = () => {
   return (
     <Section id="about-me" headingText="Adrian Piątek">
-      <div className="animate-hidden flex flex-col w-full gap-[30px]">
+      <div className="animate-hidden flex flex-col w-full gap-[30px] max-w-[650px]">
         <Typography tag="p" weight="semibold" className="text-primary text-xl sm:text-2xl">
           Junior React Developer
         </Typography>
