@@ -164,11 +164,6 @@ export const skills: {
       text: "React Native"
     },
     {
-      src: reactIcon,
-      website: "https://reactnative.dev",
-      text: "React Native"
-    },
-    {
       src: cypressIcon,
       website: "https://www.cypress.io",
       text: "Cypress"
