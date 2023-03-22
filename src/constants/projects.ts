@@ -1,6 +1,5 @@
 import type { IconType } from "react-icons/lib";
 
-import MemoryGameUrl from "assets/projects/memory-game.png?url";
 import OldPortfolioUrl from "assets/projects/old-portfolio.png?url";
 import SpotifyNext13Url from "assets/projects/spotify_next13.png?url";
 import TheLabzUrl from "assets/projects/the-labz.jpg?url";
@@ -16,7 +15,8 @@ import StorybookIcon from "icons/StorybookIcon";
 import StyledComponentsIcon from "icons/StyledComponentsIcon";
 import TailwindIcon from "icons/TailwindIcon";
 import TestIcon from "icons/TestIcon";
-import TrpcIcon from "icons/TrpcIcon";
+import GraphqlIcon from "icons/TrpcIcon";
+import trpcIcon from "icons/TrpcIcon";
 import TypescriptIcon from "icons/TypescriptIcon";
 
 const techTypes = [
@@ -36,7 +36,8 @@ const techTypes = [
   "Tailwind CSS",
   "tRPC",
   "Svelte",
-  "GraphQL"
+  "GraphQL",
+  "TypeGraphQL"
 ] as const;
 
 type TechTuple = typeof techTypes;
@@ -66,8 +67,9 @@ const airtableTech: ProjectTech = { tech: "Airtable", icon: AirtableIcon };
 const awsTech: ProjectTech = { tech: "AWS", icon: AwsIcon };
 const craftjsTech: ProjectTech = { tech: "@craftjs/core", icon: BuildIcon };
 const tailwindCssTech: ProjectTech = { tech: "Tailwind CSS", icon: TailwindIcon };
-const trpcTech: ProjectTech = { tech: "tRPC", icon: TrpcIcon };
-const graphqlTech: ProjectTech = { tech: "GraphQL", icon: TrpcIcon };
+const trpcTech: ProjectTech = { tech: "tRPC", icon: trpcIcon };
+const graphqlTech: ProjectTech = { tech: "GraphQL", icon: GraphqlIcon };
+const typeGraphqlTech: ProjectTech = { tech: "TypeGraphQL", icon: GraphqlIcon };
 // const viteReactTech: ProjectTech = { tech: "Vite", icon: ViteIcon };
 // const svelteTech: ProjectTech = { tech: "Svelte", icon: SvelteIcon };
 
@@ -112,27 +114,20 @@ export const projects: Project[] = [
   },
   {
     title: "Spotify Next.js 13",
-    description: "Portfolio website built with svelte and vite.",
+    description:
+      "I am trying to build Spotify with basic features.\n Basically, I build it because I want to check Next.js 13 app directory and master GraphQL with TypeGraphQL. Currently, you will find here only sign-in and sign-up functionality.",
     image: SpotifyNext13Url,
     url: "https://spotify-nextjs13-graphql-tailwindcss.vercel.app/login",
     githubUrl: "https://github.com/adrianpiatek99/spotify-nextjs13-graphql-tailwindcss",
-    techs: [nextjsTech, typeScriptTech, graphqlTech, prismaTech, tailwindCssTech],
+    techs: [nextjsTech, typeScriptTech, graphqlTech, typeGraphqlTech, prismaTech, tailwindCssTech],
     isPinned: true
   },
   {
     title: "Old portfolio",
-    description: "Old portfolio website.",
+    description: "Old portfolio that contains old projects.",
     image: OldPortfolioUrl,
     url: "https://portfolio-adrian-piatek.vercel.app",
     githubUrl: "https://github.com/adrianpiatek99/portfolio-nextjs",
     techs: [reactTech, typeScriptTech, styledComponentsTech]
-  },
-  {
-    title: "Memory game",
-    description: "Pokemon memory game.",
-    image: MemoryGameUrl,
-    url: "https://memory-game-react-liart.vercel.app",
-    githubUrl: "https://github.com/adrianpiatek99/memory-game-react",
-    techs: [reactTech, reduxTech, styledComponentsTech]
   }
 ];
