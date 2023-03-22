@@ -1,8 +1,8 @@
 import type { IconType } from "react-icons/lib";
 
-import CurrentPortfolioUrl from "assets/projects/current-portfolio.png?url";
 import MemoryGameUrl from "assets/projects/memory-game.png?url";
 import OldPortfolioUrl from "assets/projects/old-portfolio.png?url";
+import SpotifyNext13Url from "assets/projects/spotify_next13.png?url";
 import TheLabzUrl from "assets/projects/the-labz.jpg?url";
 import TwitterCloneUrl from "assets/projects/twitter-clone.png?url";
 import AirtableIcon from "icons/AirtableIcon";
@@ -14,12 +14,10 @@ import ReactIcon from "icons/ReactIcon";
 import ReduxIcon from "icons/ReduxIcon";
 import StorybookIcon from "icons/StorybookIcon";
 import StyledComponentsIcon from "icons/StyledComponentsIcon";
-import SvelteIcon from "icons/SvelteIcon";
 import TailwindIcon from "icons/TailwindIcon";
 import TestIcon from "icons/TestIcon";
 import TrpcIcon from "icons/TrpcIcon";
 import TypescriptIcon from "icons/TypescriptIcon";
-import ViteIcon from "icons/ViteIcon";
 
 const techTypes = [
   "Next.js",
@@ -37,7 +35,8 @@ const techTypes = [
   "@craftjs/core",
   "Tailwind CSS",
   "tRPC",
-  "Svelte"
+  "Svelte",
+  "GraphQL"
 ] as const;
 
 type TechTuple = typeof techTypes;
@@ -58,7 +57,6 @@ const nextjsTech: ProjectTech = { tech: "Next.js", icon: NextjsIcon };
 const typeScriptTech: ProjectTech = { tech: "TypeScript", icon: TypescriptIcon };
 const prismaTech: ProjectTech = { tech: "Prisma", icon: PrismaIcon };
 const styledComponentsTech: ProjectTech = { tech: "Styled Components", icon: StyledComponentsIcon };
-const viteReactTech: ProjectTech = { tech: "Vite", icon: ViteIcon };
 const reactTech: ProjectTech = { tech: "React", icon: ReactIcon };
 const reduxTech: ProjectTech = { tech: "Redux", icon: ReduxIcon };
 const testTech: ProjectTech = { tech: "Jest + RTL", icon: TestIcon };
@@ -69,7 +67,9 @@ const awsTech: ProjectTech = { tech: "AWS", icon: AwsIcon };
 const craftjsTech: ProjectTech = { tech: "@craftjs/core", icon: BuildIcon };
 const tailwindCssTech: ProjectTech = { tech: "Tailwind CSS", icon: TailwindIcon };
 const trpcTech: ProjectTech = { tech: "tRPC", icon: TrpcIcon };
-const svelteTech: ProjectTech = { tech: "Svelte", icon: SvelteIcon };
+const graphqlTech: ProjectTech = { tech: "GraphQL", icon: TrpcIcon };
+// const viteReactTech: ProjectTech = { tech: "Vite", icon: ViteIcon };
+// const svelteTech: ProjectTech = { tech: "Svelte", icon: SvelteIcon };
 
 export const projects: Project[] = [
   {
@@ -111,12 +111,13 @@ export const projects: Project[] = [
     isPinned: true
   },
   {
-    title: "Svelte portfolio",
+    title: "Spotify Next.js 13",
     description: "Portfolio website built with svelte and vite.",
-    image: CurrentPortfolioUrl,
-    url: "https://adrian-piatek-portfolio2.vercel.app",
-    githubUrl: "https://github.com/adrianpiatek99/portfolio-vite-react",
-    techs: [svelteTech, viteReactTech, typeScriptTech, tailwindCssTech]
+    image: SpotifyNext13Url,
+    url: "https://spotify-nextjs13-graphql-tailwindcss.vercel.app/login",
+    githubUrl: "https://github.com/adrianpiatek99/spotify-nextjs13-graphql-tailwindcss",
+    techs: [nextjsTech, typeScriptTech, graphqlTech, prismaTech, tailwindCssTech],
+    isPinned: true
   },
   {
     title: "Old portfolio",
